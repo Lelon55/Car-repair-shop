@@ -1,6 +1,8 @@
 # Car Repair Shop
 This project was created for a small company. Used to save the data of repaired cars. The program has the ability to: save, read, edit, delete data, and based on it can generate a PDF document.
 
+The business owner does not need to have data in paper form. It allows you to be an ecological company.
+
 * [Required](#required)
 * [Technologies](#technologies)
 * [Programming rules](#programming-rules)
