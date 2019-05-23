@@ -118,5 +118,12 @@ namespace Car_Repair_Shop
         {
             e.Handled = methods.DigitLetterWithSpace(e.KeyChar);
         }
+
+        private void BtnSendMail_Click(object sender, EventArgs e)
+        {
+            EmailCreator email = new EmailCreator();
+            this.Hide();
+            email.ShowDialog();
+        }
     }
 }

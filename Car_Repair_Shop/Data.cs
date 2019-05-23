@@ -24,4 +24,10 @@ namespace Car_Repair_Shop
 
         #endregion
     }
+
+    public class Customer
+    {
+        internal static string Email;
+        internal static int Spent_money;
+    }
 }

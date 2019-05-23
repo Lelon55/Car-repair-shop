@@ -42,10 +42,13 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnSearchVIN = new System.Windows.Forms.Button();
             this.btnSearchPlate = new System.Windows.Forms.Button();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.BtnSendMail = new System.Windows.Forms.Button();
             this.tableSearchForm.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableOptions.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableSearchForm
@@ -212,9 +215,10 @@
             this.tableOptions.Controls.Add(this.btnSearchPlate, 2, 0);
             this.tableOptions.Location = new System.Drawing.Point(174, 325);
             this.tableOptions.Name = "tableOptions";
-            this.tableOptions.RowCount = 1;
+            this.tableOptions.RowCount = 2;
             this.tableOptions.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableOptions.Size = new System.Drawing.Size(440, 40);
+            this.tableOptions.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableOptions.Size = new System.Drawing.Size(440, 60);
             this.tableOptions.TabIndex = 12;
             // 
             // btnAdd
@@ -262,12 +266,44 @@
             this.btnSearchPlate.UseVisualStyleBackColor = true;
             this.btnSearchPlate.Click += new System.EventHandler(this.BtnSearchPlate_Click);
             // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.tableLayoutPanel2.ColumnCount = 1;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Controls.Add(this.BtnSendMail, 0, 0);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(174, 371);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(440, 39);
+            this.tableLayoutPanel2.TabIndex = 13;
+            // 
+            // BtnSendMail
+            // 
+            this.BtnSendMail.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnSendMail.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BtnSendMail.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.BtnSendMail.Location = new System.Drawing.Point(3, 3);
+            this.BtnSendMail.Name = "BtnSendMail";
+            this.BtnSendMail.Size = new System.Drawing.Size(434, 34);
+            this.BtnSendMail.TabIndex = 4;
+            this.BtnSendMail.Text = "Send Mail";
+            this.BtnSendMail.UseVisualStyleBackColor = true;
+            this.BtnSendMail.Click += new System.EventHandler(this.BtnSendMail_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(792, 573);
+            this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableOptions);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.tableSearchForm);
@@ -282,6 +318,7 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tableOptions.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -303,5 +340,7 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnSearchVIN;
         private System.Windows.Forms.Button btnSearchPlate;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.Button BtnSendMail;
     }
 }

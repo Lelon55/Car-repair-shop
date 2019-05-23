@@ -16,6 +16,7 @@ namespace Car_Repair_Shop
         private Database database = new Database();
         private Methods methods = new Methods();
         private PdfAddForm pdfgenerate = new PdfAddForm();
+        private CustomerService customer_service = new CustomerService();
 
         public AddForm()
         {
@@ -40,9 +41,9 @@ namespace Car_Repair_Shop
             dateDevotionCar.Text = dateAcceptanceCar.Text;
         }
 
-        private void Add_to_database()
+        private void Add_Car_To_Database()
         {
-            string query = "INSERT INTO car_repair (vin, plate, brand, model, year_production, todo, repaired, parts_cost, labor_cost, mileage, acceptance, devotion, comment) VALUES ('" + Car.Vin + "', '" + txtPlate.Text + "', '" + txtBrandCar.Text + "', '" + txtModelCar.Text + "', '" + txtYearProduction.Text + "', '" + txtToDo.Text + "', '" + txtRepaired.Text + "','" + txtPartCost.Text + "', '" + txtLaborCost.Text + "', '" + txtMileage.Text + "', '" + dateAcceptanceCar.Text + "','" + dateDevotionCar.Text + "', '" + txtComment.Text + "' )";
+            string query = "INSERT INTO car_repair (vin, plate, brand, model, year_production, todo, repaired, parts_cost, labor_cost, mileage, acceptance, devotion, comment, email) VALUES ('" + Car.Vin + "', '" + txtPlate.Text + "', '" + txtBrandCar.Text + "', '" + txtModelCar.Text + "', '" + txtYearProduction.Text + "', '" + txtToDo.Text + "', '" + txtRepaired.Text + "','" + txtPartCost.Text + "', '" + txtLaborCost.Text + "', '" + txtMileage.Text + "', '" + dateAcceptanceCar.Text + "','" + dateDevotionCar.Text + "', '" + txtComment.Text + "', '" + txtEmail.Text + "' )";
             if (database.OpenConnection() == true)
             {
                 MessageBox.Show("Added data for VIN: " + Car.Vin, Text);
@@ -52,12 +53,14 @@ namespace Car_Repair_Shop
                 database.CloseConnection();
             }
         }
+
         private void BtnAdd_Click(object sender, EventArgs e)
         {
-            Add_to_database();
             SaveAutoData();
+            SaveCustomerData();
+            Add_Car_To_Database();
+            customer_service.Set_Customer_At_Database();
             Back();
-
         }
 
         private void DateCompare(DateTime dt1, DateTime dt2)
@@ -118,6 +121,10 @@ namespace Car_Repair_Shop
         {
             methods.Count_Length(label_BrandLength, txtBrandCar);
         }
+        private void CountEmailLength(object sender, EventArgs e)
+        {
+            methods.Count_Length(label_EmailLength, txtEmail);
+        }
         #endregion
 
         private void AddForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -136,8 +143,10 @@ namespace Car_Repair_Shop
 
         private void BtnGeneratePDF_Click(object sender, EventArgs e)
         {
-            Add_to_database();
             SaveAutoData();
+            SaveCustomerData();
+            Add_Car_To_Database();
+            customer_service.Set_Customer_At_Database();
             pdfgenerate.Generate_PdfAddForm();
             Back();
         }
@@ -161,6 +170,11 @@ namespace Car_Repair_Shop
             Car.Comment = txtComment.Text;
         }
 
+        private void SaveCustomerData()
+        {
+            Customer.Email = txtEmail.Text;
+        }
+
         private void TxtDigitLetter_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = methods.DigitLetterWithSpace(e.KeyChar);
@@ -180,5 +194,7 @@ namespace Car_Repair_Shop
         {
             dateDevotionCar.Value = dateAcceptanceCar.Value;
         }
+
+      
     }
 }

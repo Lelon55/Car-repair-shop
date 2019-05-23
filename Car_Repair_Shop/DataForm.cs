@@ -55,7 +55,7 @@ namespace Car_Repair_Shop
             }
         }
 
-        private string Update_Query(int value) //if 1 = nr rej, if 0 = vin
+        private string Select_Query(int value) //if 1 = nr rej, if 0 = vin
         {
             if (value == 0)
             {
@@ -66,7 +66,7 @@ namespace Car_Repair_Shop
 
         private void Auto_Load()
         {
-            string query = Update_Query(search);
+            string query = Select_Query(search);
 
             if (database.OpenConnection() == true)
             {
@@ -74,16 +74,16 @@ namespace Car_Repair_Shop
                 MySqlDataReader dataReader = cmd.ExecuteReader();
                 while (dataReader.Read())
                 {
-                    Add_Subject(dataReader["id"].ToString(), dataReader["vin"].ToString(), dataReader["plate"].ToString(), dataReader["brand"].ToString(), dataReader["model"].ToString(), dataReader["year_production"].ToString(), dataReader["todo"].ToString(), dataReader["repaired"].ToString(), dataReader["parts_cost"].ToString(), dataReader["labor_cost"].ToString(), dataReader["mileage"].ToString(), dataReader["acceptance"].ToString(), dataReader["devotion"].ToString(), dataReader["comment"].ToString());
+                    Add_Subject(dataReader["id"].ToString(), dataReader["vin"].ToString(), dataReader["plate"].ToString(), dataReader["brand"].ToString(), dataReader["model"].ToString(), dataReader["year_production"].ToString(), dataReader["todo"].ToString(), dataReader["repaired"].ToString(), dataReader["parts_cost"].ToString(), dataReader["labor_cost"].ToString(), dataReader["mileage"].ToString(), dataReader["acceptance"].ToString(), dataReader["devotion"].ToString(), dataReader["comment"].ToString(), dataReader["email"].ToString());
                 }
                 dataReader.Close();
                 database.CloseConnection();
             }
         }
 
-        private void Add_Subject(string id, string vin, string plate, string brand, string model, string year_production, string todo, string repaired, string parts_cost, string labor_cost, string mileage, string acceptance, string devotion, string comment)
+        private void Add_Subject(string id, string vin, string plate, string brand, string model, string year_production, string todo, string repaired, string parts_cost, string labor_cost, string mileage, string acceptance, string devotion, string comment, string email)
         {
-            dataGridView1.Rows.Add(id, vin, plate, brand, model, year_production, todo, repaired, parts_cost, labor_cost, mileage, acceptance, devotion, comment);
+            dataGridView1.Rows.Add(id, vin, plate, brand, model, year_production, todo, repaired, parts_cost, labor_cost, mileage, acceptance, devotion, comment, email);
         }
 
         private void DataForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -121,6 +121,11 @@ namespace Car_Repair_Shop
             Car.Comment = dataGridView1.Rows[nr_row].Cells["comment"].Value.ToString();
         }
 
+        private void SaveCustomerData(int nr_row)
+        {
+            Customer.Email = dataGridView1.Rows[nr_row].Cells["email"].Value.ToString();
+        }
+
         private string SetData(int nr_row, string value_text)
         {
             return dataGridView1.Rows[nr_row].Cells[value_text].Value.ToString();
@@ -133,6 +138,7 @@ namespace Car_Repair_Shop
             if (e.ColumnIndex == dataGridView1.Columns["generate_pdf"].Index && nr_row >= 0)
             {
                 SaveAutoData(nr_row);
+                SaveCustomerData(nr_row);
                 pdfgenerate.Generate_PdfAddForm();
                 Back();
             }
