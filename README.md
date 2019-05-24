@@ -11,8 +11,8 @@ The business owner does not need to have data in paper form. It allows you to be
 * [Sources](#sources)
 
 ## Required
-Systems: Windows Vista, 7, 8, 10
-Installed .Net Framework 4.6.1
+- Systems: Windows Vista, 7, 8, 10,
+- Installed .Net Framework 4.6.1
 
 ## Technologies
 - C#,
@@ -21,8 +21,8 @@ Installed .Net Framework 4.6.1
 
 ## Programming rules
 I try to apply programming principles such as:
--DRY, 
--KISS.
+- DRY, 
+- KISS.
 
 ## Plugins
 - MySQL.Data,
