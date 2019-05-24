@@ -22,7 +22,8 @@ The business owner does not need to have data in paper form. It allows you to be
 ## Programming rules
 I try to apply programming principles such as:
 - DRY, 
-- KISS.
+- KISS,
+- Clean Code.
 
 ## Plugins
 - MySQL.Data,
