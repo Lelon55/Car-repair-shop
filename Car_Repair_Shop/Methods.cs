@@ -46,7 +46,5 @@ namespace Car_Repair_Shop
         {
             return (!char.IsDigit(ch) && ch != 8);
         }
-
-
     }
 }

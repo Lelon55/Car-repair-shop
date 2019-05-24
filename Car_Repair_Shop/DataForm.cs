@@ -16,6 +16,7 @@ namespace Car_Repair_Shop
         private Database database = new Database();
         private Methods methods = new Methods();
         private PdfAddForm pdfgenerate = new PdfAddForm();
+        private CustomerService customer_service = new CustomerService(); 
         private int search; //0 vin, 1 plate
 
         private string choosen_cell = "";
@@ -145,9 +146,13 @@ namespace Car_Repair_Shop
 
             if (e.ColumnIndex == dataGridView1.Columns["delete_record"].Index && nr_row >= 0)
             {
+                SaveAutoData(nr_row);
+                SaveCustomerData(nr_row);
                 string ID_data = dataGridView1.Rows[nr_row].Cells["id"].Value.ToString();
+
                 if (MessageBox.Show("Are you sure to Delete ID: " + ID_data + "?", Text, MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
+                    customer_service.Set_Sub_Customer_At_Database(dataGridView1.Rows[nr_row].Cells["email"].Value.ToString());
                     string Delete_data = "DELETE FROM car_repair WHERE id ='" + ID_data + "'";
                     MessageBox.Show("Deleted data ID: " + ID_data, Text);
 
@@ -204,7 +209,7 @@ namespace Car_Repair_Shop
             {
                 e.Handled = methods.JustDigit(e.KeyChar);
             }
-            else if (choosen_cell == "todo" || choosen_cell == "rapeired" || choosen_cell == "acceptance" || choosen_cell == "devotion" || choosen_cell == "comment")
+            else if (choosen_cell == "todo" || choosen_cell == "rapeired" || choosen_cell == "acceptance" || choosen_cell == "devotion" || choosen_cell == "comment" || choosen_cell == "email")
             {
                 e.Handled = false;
             }
