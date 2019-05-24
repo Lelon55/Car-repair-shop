@@ -29,7 +29,7 @@ I try to apply programming principles such as:
 - ITextSharp 5.5.13.
 
 ## Status
-Currently refactoring and optimizing the code.
+Preparation of the application for sending e-mails to clients.
 
 ## Sources
 If you would like to test this project, you can download on own PC. Data for login saved into program.
