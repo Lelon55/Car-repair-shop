@@ -15,13 +15,10 @@ namespace Car_Repair_Shop
         int Check_Cost(string cost);
 
         int Add_Spent_Money(int spent, int parts_cost, int labor_cost);
-        int Substration_Spent_Money(int spent, int parts_cost, int labor_cost);
 
         void Insert_Customer_At_Database();
-        void Update_Add_Customer_At_Database();
-        void Update_Sub_Customer_At_Database();
-        void Set_Add_Customer_At_Database(string email);
-        void Set_Sub_Customer_At_Database(string email);
+        void Update_Customer_At_Database();
+        void Set_Customer_At_Database(string email);
     }
 
     public class CustomerService : ICustomerService
@@ -54,26 +51,18 @@ namespace Car_Repair_Shop
             return email != "";
         }
 
-        public int Check_Cost(string cost)    //if empty return 0
+        public int Check_Cost(string cost) //if empty return 0
         {
             if (cost != "")
             {
                 return Int32.Parse(cost);
             }
-            else
-            {
-                return 0;
-            }
+            return 0;
         }
 
         public int Add_Spent_Money(int spent, int parts_cost, int labor_cost)
         {
             return spent + parts_cost + labor_cost;
-        }
-
-        public int Substration_Spent_Money(int spent, int parts_cost, int labor_cost)
-        {
-            return spent - parts_cost - labor_cost;
         }
 
         public void Insert_Customer_At_Database()
@@ -88,14 +77,18 @@ namespace Car_Repair_Shop
             }
         }
 
-        public void Update_Add_Customer_At_Database() //update add spent money
+        public void Update_Customer_At_Database() //update spent money
         {
-            string Update_data = "UPDATE customers SET spent_money='" + Add_Spent_Money(spent_money, Check_Cost(Car.PartCost), Check_Cost(Car.LaborCost)) + "' WHERE email='" + Customer.Email + "'";
+            string Update_data = "UPDATE customers SET spent_money=(SELECT SUM(labor_cost + parts_cost) FROM car_repair WHERE email='" + Customer.Email + "') WHERE email='" + Customer.Email + "'";
+            OpenConnection_Update(Update_data);
+        }
 
+        public void OpenConnection_Update(string query)
+        {
             if (database.OpenConnection() == true)
             {
-                MySqlCommand cmd = new MySqlCommand(Update_data, database.connection);
-                cmd.CommandText = Update_data;
+                MySqlCommand cmd = new MySqlCommand(query, database.connection);
+                cmd.CommandText = query;
                 cmd.Connection = database.connection;
                 cmd.ExecuteNonQuery();
                 cmd.Dispose();
@@ -103,46 +96,16 @@ namespace Car_Repair_Shop
             }
         }
 
-        public void Update_Sub_Customer_At_Database()//update substration spent money
-        {
-            string Update_data = "UPDATE customers SET spent_money='" + Substration_Spent_Money(spent_money, Check_Cost(Car.PartCost), Check_Cost(Car.LaborCost)) + "' WHERE email='" + Customer.Email + "'";
-
-            if (database.OpenConnection() == true)
-            {
-                MySqlCommand cmd = new MySqlCommand(Update_data, database.connection);
-                cmd.CommandText = Update_data;
-                cmd.Connection = database.connection;
-                cmd.ExecuteNonQuery();
-                cmd.Dispose();
-                database.CloseConnection();
-            }
-        }
-
-        public void Set_Add_Customer_At_Database(string email) // for AddForm
+        public void Set_Customer_At_Database(string email) // for AddForm
         {
             Check_Customer_At_Database(email); //call the method so that the conditional statement can work correctly
-
             if (_IsEmail == false) // false = new customer. Add new customer with spent money
             {
                 Insert_Customer_At_Database();
             }
             else if (_IsEmail == true) // true = customer already in the database. Just Update Spent_money from new repair
             {
-                Update_Add_Customer_At_Database();
-            }
-        }
-
-        public void Set_Sub_Customer_At_Database(string email) // for DataForm when Delete repairID
-        {
-            Check_Customer_At_Database(email); //call the method so that the conditional statement can work correctly
-
-            if (_IsEmail == false) // false 
-            {
-                //nothing
-            }
-            else if (_IsEmail == true) // true = customer already in the database. Just Update Spent_money from new repair
-            {
-                Update_Sub_Customer_At_Database();
+                Update_Customer_At_Database();
             }
         }
     }

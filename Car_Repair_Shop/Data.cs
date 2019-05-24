@@ -28,6 +28,6 @@ namespace Car_Repair_Shop
     public class Customer
     {
         internal static string Email;
-        internal static int Spent_money;
+        //internal static int Spent_money;
     }
 }

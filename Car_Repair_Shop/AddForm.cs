@@ -59,7 +59,7 @@ namespace Car_Repair_Shop
             SaveAutoData();
             SaveCustomerData();
             Add_Car_To_Database();
-            customer_service.Set_Add_Customer_At_Database(txtEmail.Text);
+            customer_service.Set_Customer_At_Database(Customer.Email);
             Back();
         }
 
@@ -146,7 +146,7 @@ namespace Car_Repair_Shop
             SaveAutoData();
             SaveCustomerData();
             Add_Car_To_Database();
-            customer_service.Set_Add_Customer_At_Database(txtEmail.Text);
+            customer_service.Set_Customer_At_Database(Customer.Email);
             pdfgenerate.Generate_PdfAddForm();
             Back();
         }

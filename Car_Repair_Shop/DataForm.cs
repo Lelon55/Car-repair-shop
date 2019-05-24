@@ -152,10 +152,8 @@ namespace Car_Repair_Shop
 
                 if (MessageBox.Show("Are you sure to Delete ID: " + ID_data + "?", Text, MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    customer_service.Set_Sub_Customer_At_Database(dataGridView1.Rows[nr_row].Cells["email"].Value.ToString());
                     string Delete_data = "DELETE FROM car_repair WHERE id ='" + ID_data + "'";
                     MessageBox.Show("Deleted data ID: " + ID_data, Text);
-
                     if (database.OpenConnection() == true)
                     {
                         MySqlCommand cmd = new MySqlCommand(Delete_data, database.connection);
@@ -163,18 +161,20 @@ namespace Car_Repair_Shop
                         dataReader.Close();
                         database.CloseConnection();
                     }
+                    customer_service.Set_Customer_At_Database(dataGridView1.Rows[nr_row].Cells["email"].Value.ToString());
                     Back();
                 }
             }
 
             if (e.ColumnIndex == dataGridView1.Columns["update"].Index && nr_row >= 0)
             {
+                SaveAutoData(nr_row);
+                SaveCustomerData(nr_row);
                 string ID_data = dataGridView1.Rows[nr_row].Cells["id"].Value.ToString();
                 if (MessageBox.Show("Are you sure to Update ID: " + ID_data + "?", Text, MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    string Update_data = "UPDATE car_repair SET vin='" + SetData(nr_row, "vin") + "', plate='" + SetData(nr_row, "plate") + "', brand='" + SetData(nr_row, "brand") + "', model='" + SetData(nr_row, "model") + "', year_production='" + SetData(nr_row, "year_production") + "', todo='" + SetData(nr_row, "todo") + "', repaired='" + SetData(nr_row, "repaired") + "', parts_cost='" + SetData(nr_row, "parts_cost") + "', labor_cost='" + SetData(nr_row, "labor_cost") + "', mileage='" + SetData(nr_row, "mileage") + "', acceptance='" + SetData(nr_row, "acceptance") + "', devotion='" + SetData(nr_row, "devotion") + "', comment='" + SetData(nr_row, "comment") + "' WHERE id='" + ID_data + "'";
+                    string Update_data = "UPDATE car_repair SET vin='" + SetData(nr_row, "vin") + "', plate='" + SetData(nr_row, "plate") + "', brand='" + SetData(nr_row, "brand") + "', model='" + SetData(nr_row, "model") + "', year_production='" + SetData(nr_row, "year_production") + "', todo='" + SetData(nr_row, "todo") + "', repaired='" + SetData(nr_row, "repaired") + "', parts_cost='" + SetData(nr_row, "parts_cost") + "', labor_cost='" + SetData(nr_row, "labor_cost") + "', mileage='" + SetData(nr_row, "mileage") + "', acceptance='" + SetData(nr_row, "acceptance") + "', devotion='" + SetData(nr_row, "devotion") + "', comment='" + SetData(nr_row, "comment") + "', email='" + SetData(nr_row, "email") + "' WHERE id='" + ID_data + "'";
                     MessageBox.Show("Updated data ID: " + ID_data, Text);
-
                     if (database.OpenConnection() == true)
                     {
                         MySqlCommand cmd = new MySqlCommand(Update_data, database.connection);
@@ -184,6 +184,7 @@ namespace Car_Repair_Shop
                         cmd.Dispose();
                         database.CloseConnection();
                     }
+                    customer_service.Set_Customer_At_Database(dataGridView1.Rows[nr_row].Cells["email"].Value.ToString());
                     Back();
                 }
             }
