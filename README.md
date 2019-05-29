@@ -17,7 +17,7 @@ The business owner does not need to have data in paper form. It allows you to be
 ## Technologies
 - C#,
 - MySQL,
-- SMTP,
+- SMTP (Simple Mail Transfer Protocol),
 - Microsoft Visual Studio 2017.
 
 ## Programming rules
