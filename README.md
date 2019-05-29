@@ -1,5 +1,5 @@
 # Car Repair Shop
-This project was created for a small company. Used to save the data of repaired cars. The program has the ability to: save, read, edit, delete data, and based on it can generate a PDF document.
+This project was created for a small company. Used to save the data of repaired cars. The program has the ability to: save, read, edit, delete data, and based on it can generate a PDF document. Application also can send mails to customers.
 
 The business owner does not need to have data in paper form. It allows you to be an ecological company.
 
@@ -17,6 +17,7 @@ The business owner does not need to have data in paper form. It allows you to be
 ## Technologies
 - C#,
 - MySQL,
+- SMTP,
 - Microsoft Visual Studio 2017.
 
 ## Programming rules
@@ -30,7 +31,7 @@ I try to apply programming principles such as:
 - ITextSharp 5.5.13.
 
 ## Status
-Preparation of the application for sending e-mails to clients.
+Complete!
 
 ## Sources
 If you would like to test this project, you can download on own PC. Data for login saved into program.
