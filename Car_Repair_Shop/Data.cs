@@ -30,4 +30,5 @@ namespace Car_Repair_Shop
         internal static string Email;
         //internal static int Spent_money;
     }
+
 }

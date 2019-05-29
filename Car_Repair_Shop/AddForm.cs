@@ -23,15 +23,10 @@ namespace Car_Repair_Shop
             database.ConnectToDatabase(Data.server_name, Data.database_name, Data.username, Data.password);
             InitializeComponent();
         }
-        private void Back()
-        {
-            Form Main = new Main();
-            this.Hide();
-            Main.ShowDialog();
-        }
+
         private void BtnBack_Click(object sender, EventArgs e)
         {
-            Back();
+            methods.Back(this);
         }
 
         private void AddForm_Load(object sender, EventArgs e)
@@ -60,7 +55,7 @@ namespace Car_Repair_Shop
             SaveCustomerData();
             Add_Car_To_Database();
             customer_service.Set_Customer_At_Database(Customer.Email);
-            Back();
+            methods.Back(this);
         }
 
         private void DateCompare(DateTime dt1, DateTime dt2)
@@ -148,7 +143,7 @@ namespace Car_Repair_Shop
             Add_Car_To_Database();
             customer_service.Set_Customer_At_Database(Customer.Email);
             pdfgenerate.Generate_PdfAddForm();
-            Back();
+            methods.Back(this);
         }
 
         private void SaveAutoData()
@@ -162,8 +157,8 @@ namespace Car_Repair_Shop
             Car.DateAcceptance = dateAcceptanceCar.Text;
             Car.DateDevotion = dateDevotionCar.Text;
 
-            Car.LaborCost = txtLaborCost.Text;
-            Car.PartCost = txtPartCost.Text;
+            Car.LaborCost = methods.Check_Cost(txtLaborCost.Text);
+            Car.PartCost = methods.Check_Cost(txtPartCost.Text);
 
             Car.ToDo = txtToDo.Text;
             Car.Repaired = txtRepaired.Text;
@@ -194,7 +189,5 @@ namespace Car_Repair_Shop
         {
             dateDevotionCar.Value = dateAcceptanceCar.Value;
         }
-
-      
     }
 }

@@ -46,5 +46,17 @@ namespace Car_Repair_Shop
         {
             return (!char.IsDigit(ch) && ch != 8);
         }
+
+        internal string Check_Cost(string cost) //if empty return 0
+        {
+            return (cost != "") ? cost : "0";
+        }
+
+        internal void Back(Form form)
+        {
+            Form Main = new Main();
+            form.Hide();
+            Main.ShowDialog();
+        }
     }
 }

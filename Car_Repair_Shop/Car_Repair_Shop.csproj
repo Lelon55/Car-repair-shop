@@ -71,6 +71,7 @@
     <Compile Include="EmailCreator.Designer.cs">
       <DependentUpon>EmailCreator.cs</DependentUpon>
     </Compile>
+    <Compile Include="EmailForm.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

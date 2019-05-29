@@ -12,9 +12,7 @@ namespace Car_Repair_Shop
         void Check_Customer_At_Database(string email);
         bool Check_Email_At_Database(string email);
 
-        int Check_Cost(string cost);
-
-        int Add_Spent_Money(int spent, int parts_cost, int labor_cost);
+        int Add_Spent_Money(int spent, string parts_cost, string labor_cost);
 
         void Insert_Customer_At_Database();
         void Update_Customer_At_Database();
@@ -25,6 +23,7 @@ namespace Car_Repair_Shop
     {
         private Database database = new Database();
         private bool _IsEmail;
+        private string[] Array_Email;
         private int spent_money;
 
         public void Check_Customer_At_Database(string email) //check if the email is saved in the database
@@ -51,23 +50,14 @@ namespace Car_Repair_Shop
             return email != "";
         }
 
-        public int Check_Cost(string cost) //if empty return 0
+        public int Add_Spent_Money(int spent, string parts_cost, string labor_cost)
         {
-            if (cost != "")
-            {
-                return Int32.Parse(cost);
-            }
-            return 0;
-        }
-
-        public int Add_Spent_Money(int spent, int parts_cost, int labor_cost)
-        {
-            return spent + parts_cost + labor_cost;
+            return spent + Int32.Parse(parts_cost) + Int32.Parse(labor_cost);
         }
 
         public void Insert_Customer_At_Database()
         {
-            string query = "INSERT INTO customers (email, spent_money) VALUES ('" + Customer.Email + "', '" + Add_Spent_Money(0, Check_Cost(Car.PartCost), Check_Cost(Car.LaborCost)) + "')";
+            string query = "INSERT INTO customers (email, spent_money) VALUES ('" + Customer.Email + "', '" + Add_Spent_Money(0, Car.PartCost, Car.LaborCost) + "')";
             if (database.OpenConnection() == true)
             {
                 MySqlCommand cmd = new MySqlCommand(query, database.connection);
@@ -81,6 +71,33 @@ namespace Car_Repair_Shop
         {
             string Update_data = "UPDATE customers SET spent_money=(SELECT SUM(labor_cost + parts_cost) FROM car_repair WHERE email='" + Customer.Email + "') WHERE email='" + Customer.Email + "'";
             OpenConnection_Update(Update_data);
+        }
+
+        public void Update_All_Customer()//po zmianie emaila w dataform i klieknieciu update dokonuje aktualizacji dla wszystkich
+        {
+
+            //wczytaj SELECT wszystkie maila z bazy danych (car_repair) (tworz tabele z nimi)
+            //z tej tabeli przeszukaj maila po mailu w car_repair i sumuj jego wydatki
+            // wpisz w customers dana sume danego maila, brak maila z car_repiar w customers daj Rowne 0
+
+            //1
+            /*string[] email = new string[] { };
+
+            string query = "SELECT email FROM customers";
+            if (database.OpenConnection() == true)
+            {
+                MySqlCommand cmd = new MySqlCommand(query, database.connection);
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    
+                }
+                dataReader.Close();
+                database.CloseConnection();
+            }
+            */
+            /*string Update_data = "UPDATE customers SET spent_money=(SELECT SUM(labor_cost + parts_cost) FROM car_repair WHERE email='" + query + "') WHERE email=''";
+            OpenConnection_Update(Update_data);*/
         }
 
         public void OpenConnection_Update(string query)

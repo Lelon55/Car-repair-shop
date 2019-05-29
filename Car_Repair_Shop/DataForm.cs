@@ -28,15 +28,9 @@ namespace Car_Repair_Shop
             dataGridView1.EditingControlShowing += new DataGridViewEditingControlShowingEventHandler(WriteChar);
         }
 
-        internal void Back()
-        {
-            Form Main = new Main();
-            this.Hide();
-            Main.ShowDialog();
-        }
         private void BtnBack_Click(object sender, EventArgs e)
         {
-            Back();
+            methods.Back(this);
         }
 
         private void DataForm_Load(object sender, EventArgs e)
@@ -141,7 +135,7 @@ namespace Car_Repair_Shop
                 SaveAutoData(nr_row);
                 SaveCustomerData(nr_row);
                 pdfgenerate.Generate_PdfAddForm();
-                Back();
+                methods.Back(this);
             }
 
             if (e.ColumnIndex == dataGridView1.Columns["delete_record"].Index && nr_row >= 0)
@@ -162,7 +156,7 @@ namespace Car_Repair_Shop
                         database.CloseConnection();
                     }
                     customer_service.Set_Customer_At_Database(dataGridView1.Rows[nr_row].Cells["email"].Value.ToString());
-                    Back();
+                    methods.Back(this);
                 }
             }
 
@@ -185,7 +179,8 @@ namespace Car_Repair_Shop
                         database.CloseConnection();
                     }
                     customer_service.Set_Customer_At_Database(dataGridView1.Rows[nr_row].Cells["email"].Value.ToString());
-                    Back();
+                    //customer_service.Update_All_Customer(); 
+                    methods.Back(this);
                 }
             }
 
