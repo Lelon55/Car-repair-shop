@@ -84,6 +84,11 @@ namespace Car_Repair_Shop
             {
                 MessageBox.Show("Empty Subject or Message or no emails!", Text);
             }
-        }      
+        }
+
+        private void EmailCreator_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            methods.ExitProgram(Text);
+        }
     }
 }

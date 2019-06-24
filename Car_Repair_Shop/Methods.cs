@@ -58,5 +58,19 @@ namespace Car_Repair_Shop
             form.Hide();
             Main.ShowDialog();
         }
+
+        internal void ExitProgram(string title)
+        {
+            DialogResult Komunikat = MessageBox.Show("Are you sure to exit?", title, MessageBoxButtons.YesNo);
+            if (Komunikat == DialogResult.Yes)
+            {
+                e.Cancel = false;
+                Application.ExitThread();
+            }
+            else if (Komunikat == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+        }
     }
 }

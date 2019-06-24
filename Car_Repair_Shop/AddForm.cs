@@ -124,16 +124,7 @@ namespace Car_Repair_Shop
 
         private void AddForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            DialogResult Komunikat = MessageBox.Show("Are you sure to exit?", Text, MessageBoxButtons.YesNo);
-            if (Komunikat == DialogResult.Yes)
-            {
-                e.Cancel = false;
-                Application.ExitThread();
-            }
-            else if (Komunikat == DialogResult.No)
-            {
-                e.Cancel = true;
-            }
+            methods.ExitProgram(Text);
         }
 
         private void BtnGeneratePDF_Click(object sender, EventArgs e)
