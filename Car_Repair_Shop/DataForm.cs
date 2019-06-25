@@ -83,7 +83,7 @@ namespace Car_Repair_Shop
 
         private void DataForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            methods.ExitProgram(Text);
+            methods.ExitProgram(Text, e);
         }
 
         private void SaveAutoData(int nr_row)

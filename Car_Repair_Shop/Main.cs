@@ -97,7 +97,7 @@ namespace Car_Repair_Shop
 
         private void Main_FormClosing(object sender, FormClosingEventArgs e)
         {
-            methods.ExitProgram(Text);
+            methods.ExitProgram(Text, e);
         }
 
         private void TxtPlateLength_TextChanged(object sender, EventArgs e)

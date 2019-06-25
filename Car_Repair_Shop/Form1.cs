@@ -57,7 +57,7 @@ namespace Car_Repair_Shop
 
         private void Login_FormClosing(object sender, FormClosingEventArgs e)
         {
-            methods.ExitProgram(Text);
+            methods.ExitProgram(Text, e);
         }
     }
 }

@@ -19,7 +19,7 @@ namespace Car_Repair_Shop
 
     public class PdfAddForm
     {
-        private Document pdfDoc = new Document(PageSize.A4, 10f, 10f, 10f, 10f);
+        public Document pdfDoc = new Document(PageSize.A4, 10f, 10f, 10f, 10f);
 
         private Font SetFont(string name)
         {
@@ -127,7 +127,6 @@ namespace Car_Repair_Shop
             Pdf_Body();
             Pdf_Footer();
             pdfDoc.Close();
-
         }
     }
 }

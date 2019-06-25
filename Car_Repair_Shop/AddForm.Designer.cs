@@ -135,7 +135,7 @@
             this.tableDatasCar.Name = "tableDatasCar";
             this.tableDatasCar.RowCount = 1;
             this.tableDatasCar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 215F));
-            this.tableDatasCar.Size = new System.Drawing.Size(930, 215);
+            this.tableDatasCar.Size = new System.Drawing.Size(927, 215);
             this.tableDatasCar.TabIndex = 16;
             // 
             // groupBox1
@@ -162,7 +162,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(303, 209);
+            this.groupBox1.Size = new System.Drawing.Size(302, 209);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Data Car";
@@ -188,7 +188,7 @@
             this.txtBrandCar.Location = new System.Drawing.Point(73, 28);
             this.txtBrandCar.MaxLength = 32;
             this.txtBrandCar.Name = "txtBrandCar";
-            this.txtBrandCar.Size = new System.Drawing.Size(163, 29);
+            this.txtBrandCar.Size = new System.Drawing.Size(162, 29);
             this.txtBrandCar.TabIndex = 0;
             this.txtBrandCar.TextChanged += new System.EventHandler(this.CountBrandLength);
             this.txtBrandCar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtDigitLetter_KeyPress);
@@ -199,7 +199,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label_BrandLength.AutoSize = true;
             this.label_BrandLength.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label_BrandLength.Location = new System.Drawing.Point(241, 31);
+            this.label_BrandLength.Location = new System.Drawing.Point(240, 31);
             this.label_BrandLength.Name = "label_BrandLength";
             this.label_BrandLength.Size = new System.Drawing.Size(42, 21);
             this.label_BrandLength.TabIndex = 5;
@@ -211,7 +211,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label_MileageStatusLength.AutoSize = true;
             this.label_MileageStatusLength.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label_MileageStatusLength.Location = new System.Drawing.Point(241, 171);
+            this.label_MileageStatusLength.Location = new System.Drawing.Point(240, 171);
             this.label_MileageStatusLength.Name = "label_MileageStatusLength";
             this.label_MileageStatusLength.Size = new System.Drawing.Size(33, 21);
             this.label_MileageStatusLength.TabIndex = 5;
@@ -226,7 +226,7 @@
             this.txtMileage.Location = new System.Drawing.Point(90, 168);
             this.txtMileage.MaxLength = 8;
             this.txtMileage.Name = "txtMileage";
-            this.txtMileage.Size = new System.Drawing.Size(146, 29);
+            this.txtMileage.Size = new System.Drawing.Size(145, 29);
             this.txtMileage.TabIndex = 4;
             this.txtMileage.TextChanged += new System.EventHandler(this.CountMileageLength);
             this.txtMileage.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtDigit_KeyPress);
@@ -252,7 +252,7 @@
             this.txtModelCar.Location = new System.Drawing.Point(74, 63);
             this.txtModelCar.MaxLength = 32;
             this.txtModelCar.Name = "txtModelCar";
-            this.txtModelCar.Size = new System.Drawing.Size(162, 29);
+            this.txtModelCar.Size = new System.Drawing.Size(161, 29);
             this.txtModelCar.TabIndex = 1;
             this.txtModelCar.TextChanged += new System.EventHandler(this.CountModelCarLength);
             this.txtModelCar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtDigitLetter_KeyPress);
@@ -263,7 +263,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label_PlateLength.AutoSize = true;
             this.label_PlateLength.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label_PlateLength.Location = new System.Drawing.Point(241, 136);
+            this.label_PlateLength.Location = new System.Drawing.Point(240, 136);
             this.label_PlateLength.Name = "label_PlateLength";
             this.label_PlateLength.Size = new System.Drawing.Size(33, 21);
             this.label_PlateLength.TabIndex = 5;
@@ -275,7 +275,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label_YearProductionLength.AutoSize = true;
             this.label_YearProductionLength.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label_YearProductionLength.Location = new System.Drawing.Point(241, 101);
+            this.label_YearProductionLength.Location = new System.Drawing.Point(240, 101);
             this.label_YearProductionLength.Name = "label_YearProductionLength";
             this.label_YearProductionLength.Size = new System.Drawing.Size(33, 21);
             this.label_YearProductionLength.TabIndex = 5;
@@ -287,7 +287,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label_ModelCarLength.AutoSize = true;
             this.label_ModelCarLength.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label_ModelCarLength.Location = new System.Drawing.Point(241, 66);
+            this.label_ModelCarLength.Location = new System.Drawing.Point(240, 66);
             this.label_ModelCarLength.Name = "label_ModelCarLength";
             this.label_ModelCarLength.Size = new System.Drawing.Size(42, 21);
             this.label_ModelCarLength.TabIndex = 5;
@@ -314,7 +314,7 @@
             this.txtYearProduction.Location = new System.Drawing.Point(105, 98);
             this.txtYearProduction.MaxLength = 4;
             this.txtYearProduction.Name = "txtYearProduction";
-            this.txtYearProduction.Size = new System.Drawing.Size(131, 29);
+            this.txtYearProduction.Size = new System.Drawing.Size(130, 29);
             this.txtYearProduction.TabIndex = 2;
             this.txtYearProduction.TextChanged += new System.EventHandler(this.CountYearProductionLength);
             this.txtYearProduction.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtDigit_KeyPress);
@@ -341,7 +341,7 @@
             this.txtPlate.Location = new System.Drawing.Point(73, 133);
             this.txtPlate.MaxLength = 9;
             this.txtPlate.Name = "txtPlate";
-            this.txtPlate.Size = new System.Drawing.Size(163, 29);
+            this.txtPlate.Size = new System.Drawing.Size(162, 29);
             this.txtPlate.TabIndex = 3;
             this.txtPlate.TextChanged += new System.EventHandler(this.CountPlateLength);
             this.txtPlate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtDigitLetter_KeyPress);
@@ -369,9 +369,9 @@
             this.groupBox3.Controls.Add(this.label4);
             this.groupBox3.Controls.Add(this.dateDevotionCar);
             this.groupBox3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.groupBox3.Location = new System.Drawing.Point(312, 3);
+            this.groupBox3.Location = new System.Drawing.Point(311, 3);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(304, 209);
+            this.groupBox3.Size = new System.Drawing.Size(303, 209);
             this.groupBox3.TabIndex = 11;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Dates";
@@ -396,7 +396,7 @@
             this.dateAcceptanceCar.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateAcceptanceCar.Location = new System.Drawing.Point(146, 25);
             this.dateAcceptanceCar.Name = "dateAcceptanceCar";
-            this.dateAcceptanceCar.Size = new System.Drawing.Size(152, 29);
+            this.dateAcceptanceCar.Size = new System.Drawing.Size(151, 29);
             this.dateAcceptanceCar.TabIndex = 5;
             this.dateAcceptanceCar.Value = new System.DateTime(2019, 5, 7, 0, 0, 0, 0);
             this.dateAcceptanceCar.CloseUp += new System.EventHandler(this.SetDateDevotion);
@@ -421,7 +421,7 @@
             this.dateDevotionCar.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateDevotionCar.Location = new System.Drawing.Point(146, 61);
             this.dateDevotionCar.Name = "dateDevotionCar";
-            this.dateDevotionCar.Size = new System.Drawing.Size(152, 29);
+            this.dateDevotionCar.Size = new System.Drawing.Size(151, 29);
             this.dateDevotionCar.TabIndex = 6;
             this.dateDevotionCar.Value = new System.DateTime(2019, 4, 27, 0, 0, 0, 0);
             this.dateDevotionCar.CloseUp += new System.EventHandler(this.CheckDates);
@@ -442,9 +442,9 @@
             this.groupBox2.Controls.Add(this.txtLaborCost);
             this.groupBox2.Controls.Add(this.label_LaborCostLength);
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(622, 3);
+            this.groupBox2.Location = new System.Drawing.Point(620, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(305, 209);
+            this.groupBox2.Size = new System.Drawing.Size(304, 209);
             this.groupBox2.TabIndex = 12;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Cost";
@@ -455,7 +455,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label_EmailLength.AutoSize = true;
             this.label_EmailLength.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label_EmailLength.Location = new System.Drawing.Point(242, 171);
+            this.label_EmailLength.Location = new System.Drawing.Point(241, 171);
             this.label_EmailLength.Name = "label_EmailLength";
             this.label_EmailLength.Size = new System.Drawing.Size(42, 21);
             this.label_EmailLength.TabIndex = 11;
@@ -470,7 +470,7 @@
             this.txtEmail.Location = new System.Drawing.Point(74, 167);
             this.txtEmail.MaxLength = 64;
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(162, 29);
+            this.txtEmail.Size = new System.Drawing.Size(161, 29);
             this.txtEmail.TabIndex = 10;
             this.txtEmail.TextChanged += new System.EventHandler(this.CountEmailLength);
             // 
@@ -504,7 +504,7 @@
             this.txtPartCost.Location = new System.Drawing.Point(74, 28);
             this.txtPartCost.MaxLength = 8;
             this.txtPartCost.Name = "txtPartCost";
-            this.txtPartCost.Size = new System.Drawing.Size(162, 29);
+            this.txtPartCost.Size = new System.Drawing.Size(161, 29);
             this.txtPartCost.TabIndex = 7;
             this.txtPartCost.Text = "0";
             this.txtPartCost.TextChanged += new System.EventHandler(this.CountPartCostLength);
@@ -516,7 +516,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label_PartCostLength.AutoSize = true;
             this.label_PartCostLength.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label_PartCostLength.Location = new System.Drawing.Point(242, 31);
+            this.label_PartCostLength.Location = new System.Drawing.Point(241, 31);
             this.label_PartCostLength.Name = "label_PartCostLength";
             this.label_PartCostLength.Size = new System.Drawing.Size(33, 21);
             this.label_PartCostLength.TabIndex = 5;
@@ -542,7 +542,7 @@
             this.txtLaborCost.Location = new System.Drawing.Point(74, 64);
             this.txtLaborCost.MaxLength = 8;
             this.txtLaborCost.Name = "txtLaborCost";
-            this.txtLaborCost.Size = new System.Drawing.Size(162, 29);
+            this.txtLaborCost.Size = new System.Drawing.Size(161, 29);
             this.txtLaborCost.TabIndex = 8;
             this.txtLaborCost.Text = "0";
             this.txtLaborCost.TextChanged += new System.EventHandler(this.CountLaborCostLength);
@@ -554,7 +554,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label_LaborCostLength.AutoSize = true;
             this.label_LaborCostLength.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label_LaborCostLength.Location = new System.Drawing.Point(242, 67);
+            this.label_LaborCostLength.Location = new System.Drawing.Point(241, 67);
             this.label_LaborCostLength.Name = "label_LaborCostLength";
             this.label_LaborCostLength.Size = new System.Drawing.Size(33, 21);
             this.label_LaborCostLength.TabIndex = 5;
@@ -729,8 +729,9 @@
             this.tableOptions.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableOptions.ColumnCount = 3;
             this.tableOptions.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableOptions.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableOptions.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableOptions.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableOptions.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableOptions.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableOptions.Controls.Add(this.btnGeneratePDF, 2, 0);
             this.tableOptions.Controls.Add(this.btnAdd, 1, 0);
             this.tableOptions.Controls.Add(this.btnBack, 0, 0);
@@ -748,9 +749,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnGeneratePDF.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnGeneratePDF.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnGeneratePDF.Location = new System.Drawing.Point(423, 3);
+            this.btnGeneratePDF.Location = new System.Drawing.Point(363, 3);
             this.btnGeneratePDF.Name = "btnGeneratePDF";
-            this.btnGeneratePDF.Size = new System.Drawing.Size(174, 39);
+            this.btnGeneratePDF.Size = new System.Drawing.Size(234, 39);
             this.btnGeneratePDF.TabIndex = 9;
             this.btnGeneratePDF.Text = "Add/Generate PDF";
             this.btnGeneratePDF.UseVisualStyleBackColor = true;
@@ -765,7 +766,7 @@
             this.btnAdd.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnAdd.Location = new System.Drawing.Point(123, 3);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(294, 39);
+            this.btnAdd.Size = new System.Drawing.Size(234, 39);
             this.btnAdd.TabIndex = 8;
             this.btnAdd.Text = "Add to Database";
             this.btnAdd.UseVisualStyleBackColor = true;

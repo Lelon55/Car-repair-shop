@@ -59,7 +59,7 @@ namespace Car_Repair_Shop
             Main.ShowDialog();
         }
 
-        internal void ExitProgram(string title)
+        internal void ExitProgram(string title, FormClosingEventArgs e)
         {
             DialogResult Komunikat = MessageBox.Show("Are you sure to exit?", title, MessageBoxButtons.YesNo);
             if (Komunikat == DialogResult.Yes)

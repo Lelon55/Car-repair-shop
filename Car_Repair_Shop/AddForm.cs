@@ -124,7 +124,7 @@ namespace Car_Repair_Shop
 
         private void AddForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            methods.ExitProgram(Text);
+            methods.ExitProgram(Text, e);
         }
 
         private void BtnGeneratePDF_Click(object sender, EventArgs e)
